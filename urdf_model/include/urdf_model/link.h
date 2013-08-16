@@ -251,7 +251,11 @@ public:
   };
 
   // please use visual_array member instead
+#if defined(_MSC_VER)
+  __declspec(deprecated)
+#else
   __attribute__((deprecated))
+#endif
   boost::shared_ptr<std::vector<boost::shared_ptr<Visual > > > getVisuals(const std::string& group_name) const
   {
     if (this->visual_groups.find(group_name) != this->visual_groups.end())
@@ -260,7 +264,11 @@ public:
   }
 
   // please use collision_array member instead
+#if defined(_MSC_VER)
+  __declspec(deprecated)
+#else
   __attribute__((deprecated))
+#endif
   boost::shared_ptr<std::vector<boost::shared_ptr<Collision > > > getCollisions(const std::string& group_name) const
   {
     if (this->collision_groups.find(group_name) != this->collision_groups.end())

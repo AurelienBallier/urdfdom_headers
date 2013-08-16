@@ -43,6 +43,11 @@
 #include <boost/shared_ptr.hpp>
 #include <boost/weak_ptr.hpp>
 
+#if defined(_MSC_VER)
+#include <cmath>
+inline int round(float x){ return floor(x + 0.5); }
+#endif
+
 #include "urdf_model/pose.h"
 #include <urdf_model/twist.h>
 
