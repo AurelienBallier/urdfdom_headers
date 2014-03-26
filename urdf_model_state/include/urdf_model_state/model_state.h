@@ -45,7 +45,7 @@
 
 #if defined(_MSC_VER)
 #include <cmath>
-inline int round(float x){ return floor(x + 0.5); }
+inline int round(double x){ return int(floor(x + 0.5)); }
 #endif
 
 #include "urdf_model/pose.h"
